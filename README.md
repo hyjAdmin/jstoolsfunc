@@ -109,7 +109,7 @@ for(var i = 1; i <= 5; i++) {
     
     
     let nextStep = () => {
-        this.itemsViews.forEach((comp: hcwgToolbarItemView, index: number) => {
+        this.itemsViews.forEach((comp: ToolbarItemView, index: number) => {
              this.bg.addChild(comp.node);
              count++;
              if (count >= this.toolbar.getSceneItems().length) {
@@ -118,12 +118,12 @@ for(var i = 1; i <= 5; i++) {
         });
      }
 
-     let wait = hcwgCleverapps.wait(this.toolbar.getSceneItems().length, nextStep);
+     let waitFunc = wait(this.toolbar.getSceneItems().length, nextStep);
 
      this.toolbar.getSceneItems().forEach((item, index) => {
-          hcwgToolbarItemView.ins(item, (comp: hcwgToolbarItemView) => {
+          ToolbarItemView.ins(item, (comp: ToolbarItemView) => {
                this.itemsViews[index] = comp;
-                wait();
+                Z();
           });
      });
 

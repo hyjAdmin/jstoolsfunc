@@ -14,10 +14,11 @@ function wait(n, callback) {
 }
 
 let nextStep = () => {
-    console.log('wait carry out!')
+    console.log('wait carry out!');
 }
 
 let waitFunc = wait(arr.length, nextStep);
+
 for (let i = 0; i < arr.length; i++) {
     console.log('i:', i);
     waitFunc();
