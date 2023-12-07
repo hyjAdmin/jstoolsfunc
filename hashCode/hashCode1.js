@@ -14,3 +14,6 @@ function hashCode(str) {
 
     return hashCode;
 }
+
+const value = hashCode('bcd');
+console.log('value:', value);
